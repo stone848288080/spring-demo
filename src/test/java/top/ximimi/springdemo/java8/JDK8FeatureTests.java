@@ -16,14 +16,14 @@ public class JDK8FeatureTests {
         Consumer<String> consumer =System.out::println;
         consumer.accept("Hello Consumer");
 
-        Supplier<String> stringSupplier = ()->{return "Hello Supplier";};
+        Supplier<String> stringSupplier = ()->"Hello Supplier";
         System.out.println(stringSupplier.get());
 
-        Function<String,String> function = (e)->{return e;};
+        Function<String,String> function = e->e;
         String hello_function = function.apply("Hello function");
         System.out.println(hello_function);
 
-        Predicate<Integer> predicate = (num)->{return num>10?true:false;};
+        Predicate<Integer> predicate = num->num>10?true:false;
         System.out.println(predicate.test(5));
 
     }
