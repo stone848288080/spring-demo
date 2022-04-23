@@ -1,13 +1,27 @@
 package top.ximimi.springdemo.java8;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 public class StreamTest {
+
+    static List<Apple> apples = new ArrayList<>();
+
+    static{
+        apples.add(new Apple("green",0.5));
+        apples.add(new Apple("blue",1.5));
+        apples.add(new Apple("blue",2.5));
+        apples.add(new Apple("red",3.5));
+        apples.add(new Apple("red",2.5));
+        apples.add(new Apple("red",1.5));
+    }
 
 
     @Test
@@ -45,5 +59,24 @@ public class StreamTest {
     }
 
 
+    @Test
+    void testFindFirst(){
+        Apple apple = apples.stream().filter((e)->"red".equals(e.color)).findFirst().get();
+        System.out.println(apple);
+    }
 
+
+    @Test
+    void testForeachOnly(){
+        List<String> l = new ArrayList<>();
+        apples.stream().forEach((e)->l.add(e.getColor()));
+        System.out.println(l);
+    }
+
+}
+@Data
+@AllArgsConstructor
+class Apple{
+    String color;
+    double weight;
 }
