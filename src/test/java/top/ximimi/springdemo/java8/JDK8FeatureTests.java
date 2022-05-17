@@ -10,7 +10,6 @@ import java.util.function.Supplier;
 
 @SpringBootTest
 public class JDK8FeatureTests {
-
     @Test
     void testFunctionalInterface(){
         Consumer<String> consumer =System.out::println;
@@ -27,7 +26,4 @@ public class JDK8FeatureTests {
         System.out.println(predicate.test(5));
 
     }
-
-
-
 }

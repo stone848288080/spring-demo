@@ -1,9 +1,11 @@
 package top.ximimi.springdemo.java8;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 public class JavaTest {
     String ss;
-
+    Map<String,String> map;
     /*
      JAVA类成员变量，虚拟机默认会初始化，对不同类型的变量进行初始化赋值
      */
@@ -19,5 +21,6 @@ public class JavaTest {
     void testVariableInJavaFunction() {
         String line = "";
         System.out.println(line);
+        System.out.println(map);
     }
 }
