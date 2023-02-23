@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="future loan">
+    <test name = "baidu test">
+        <classes>
+            <class name = "top.ximimi.runner.LemonRunner"></class>
+        </classes>
+    </test>
+</suite>

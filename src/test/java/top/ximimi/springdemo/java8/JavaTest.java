@@ -1,9 +1,10 @@
 package top.ximimi.springdemo.java8;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.Map;
 
-public class JavaTest {
+public class JavaTest extends ParentTest{
     String ss;
     Map<String,String> map;
     /*
@@ -22,5 +23,13 @@ public class JavaTest {
         String line = "";
         System.out.println(line);
         System.out.println(map);
+    }
+
+
+
+    private final String s2= s4s;
+    @Test
+    void testDemo1(){
+        System.out.println(s2);
     }
 }
