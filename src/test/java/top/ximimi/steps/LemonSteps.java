@@ -6,16 +6,14 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-@Log4j2
+@Slf4j
 public class LemonSteps {
 
     static EdgeDriver driver;
@@ -31,7 +29,8 @@ public class LemonSteps {
         log.debug("debug test");
         log.info(scenario.getId());
         log.info(scenario.getName());
-        log.info(scenario.getStatus());
+        log.info(scenario.getStatus().toString());
+
     }
 
 
@@ -64,6 +63,6 @@ public class LemonSteps {
         Thread.sleep(2000);
         driver.quit();
         log.info("after step");
-        log.fatal("fatal test");
+        log.error("fatal test");
     }
 }
